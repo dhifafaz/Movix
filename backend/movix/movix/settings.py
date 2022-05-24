@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'knox',
-    'sirius_api.apps.SiriusApiConfig',
+    'movix_api.apps.MovixApiConfig',
     'debug_toolbar',
     
 ]
@@ -90,7 +90,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'backendsirius.urls'
+ROOT_URLCONF = 'movix.urls'
 
 TEMPLATES = [
     {
@@ -108,12 +108,30 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backendsirius.wsgi.application'
-
+WSGI_APPLICATION = 'movix.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+DATABASES = {
 
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': ‘movix’,
+
+        'USER': '<db_username>',
+
+        'PASSWORD': '<password>',
+
+        'HOST': '<db_hostname_or_ip>',
+
+        'PORT': '<db_port>',
+
+    }
+
+}
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  
@@ -127,6 +145,7 @@ DATABASES = {
         }  
     }
 }
+"""
 
 """
 DATABASES = {
@@ -144,7 +163,7 @@ DATABASES = {
 }
 """
 
-AUTH_USER_MODEL = 'sirius_api.UserCore'
+AUTH_USER_MODEL = 'movix_api.UserCore'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
