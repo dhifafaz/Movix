@@ -1,21 +1,12 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 # from .views import Index
-# from .views import (
-#     AlatsCounter,
-#     UserView,
-#     AlatsList,
-#     OrderLogView,
-#     UserRegister,
-#     UserLogin,
-#     LogBookView,
-#     OrderLogList,
-#     AlatStatusUpdate,
-#     OrderLogHistory,
-# )
+from .views import (
+    FilmView,
+)
 
 router  = DefaultRouter()
-# router.register('lihat_users', UserView, basename='lihat_users')
+router.register('film-list', FilmView, basename='film-list')
 # router.register('register_user', UserRegister, basename='register_user')
 # router.register('pinjam_alat', AlatsList, basename='pinjam_alat')
 # router.register('order_log', OrderLogView, basename='order_log')

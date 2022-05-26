@@ -118,15 +118,15 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': ‘movix’,
+        'NAME': 'movixdatabase',
 
-        'USER': '<db_username>',
+        'USER': 'movixsuperadmin',
 
-        'PASSWORD': '<password>',
+        'PASSWORD': 'movix123',
 
-        'HOST': '<db_hostname_or_ip>',
+        'HOST': '127.0.0.1',
 
-        'PORT': '<db_port>',
+        'PORT': '5432',
 
     }
 
@@ -163,7 +163,7 @@ DATABASES = {
 }
 """
 
-AUTH_USER_MODEL = 'movix_api.UserCore'
+# AUTH_USER_MODEL = 'movix_api.UserCore'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
