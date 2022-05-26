@@ -12,7 +12,12 @@ const styles = StyleSheet.create({
     textTitle: {
         fontSize: 34,
         fontFamily: 'Ubuntu-Bold',
-        color: '#ECECEC',
+        color: '#FFFFFF',
+    },
+    textSubTittle: {
+        fontSize: 28,
+        fontFamily: 'Ubuntu-Medium',
+        color: '#FFFFFF',
     },
     view20: {
         height: 20,
