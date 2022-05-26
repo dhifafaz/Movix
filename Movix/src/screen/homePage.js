@@ -8,15 +8,17 @@ import {
     useColorScheme,
     View,
 } from 'react-native';
+import styles from "../style/homeStyle"
 
 const HomePage = () => {
 
     return (
-        <SafeAreaView>
-            <View>
-                <Text>HomePage</Text>
-            </View>
-
+        <SafeAreaView style={styles.color}>
+            <ScrollView>
+                <View style={styles.margin}>
+                    <Text style={styles.textTitle}>Movix</Text>
+                </View>
+            </ScrollView>
         </SafeAreaView>
     )
 
