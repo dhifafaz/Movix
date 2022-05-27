@@ -12,6 +12,7 @@ import {
 
 import rangkingPageStyles from '../styles/rangkingPageStyles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons/Feather';
 
 const RankingPage = () => {
   const [data, setData] = useState([
@@ -34,7 +35,6 @@ const RankingPage = () => {
   ]);
 
   const showData = () => {
-    // console.log(data);
     if (data.length > 0) {
       return data.map((item, index) => {
         return (
@@ -54,6 +54,10 @@ const RankingPage = () => {
               <Text style={rangkingPageStyles.durasi}>
                 Durasi : {item.durasi}
               </Text>
+            </View>
+            <View style={rangkingPageStyles.peringkat}>
+              <Feather name="award" style={rangkingPageStyles.IconTrophy} />
+              <Text style={rangkingPageStyles.peringkatText}>{index + 1}</Text>
             </View>
           </View>
         );

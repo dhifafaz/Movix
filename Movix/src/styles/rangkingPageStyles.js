@@ -55,6 +55,7 @@ const rangkingPageStyles = StyleSheet.create({
     color: 'white',
   },
   textArea: {
+    width: '60%',
     marginLeft: 20,
   },
   rating: {
@@ -81,6 +82,21 @@ const rangkingPageStyles = StyleSheet.create({
     fontFamily: 'Ubuntu-Medium',
     marginTop: 5,
     color: 'white',
+  },
+  peringkat: {
+    width: '20%',
+    top: '-5%',
+    alignItems: 'center',
+  },
+  IconTrophy: {
+    fontSize: 40,
+    color: '#F8B911',
+  },
+  peringkatText: {
+    fontSize: 20,
+    color: 'white',
+    top: '-40%',
+    fontFamily: 'Ubuntu-Bold',
   },
 });
 
