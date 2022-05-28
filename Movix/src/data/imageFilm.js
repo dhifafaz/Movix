@@ -1,7 +1,7 @@
 export const ImageListTemporary = [
     {
         gendre: require('../images/home/lokasi.jpg'),
-        judul: 'Dragon',
+        judul: 'Dragodsssssssssssssssssssssssssssssssssssssssssn',
         bintang: 5,
     },
     {

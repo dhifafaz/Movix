@@ -1,12 +1,16 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const rangkingPageStyles = StyleSheet.create({
   container: {
     backgroundColor: '#14162F',
     // alignItems: 'center',
     // justifyContent: 'center',
-    width: '100%',
-    height: '100%',
+    // width: '100%',
+    // height: '100%',
+    flex: 1
+  },
+  margin: {
+    margin: 20,
   },
   color: {
     color: 'white',
@@ -21,19 +25,21 @@ const rangkingPageStyles = StyleSheet.create({
   headerText: {
     fontSize: 34,
     fontFamily: 'Ubuntu-Bold',
+    marginBottom: 30,
   },
   body: {
     width: '100%',
     height: '90%',
   },
   box: {
-    marginLeft: '3%',
-    marginRight: '3%',
+    //marginLeft: '3%',
+    //marginRight: '3%',
     backgroundColor: '#4A6495',
     borderRadius: 10,
     flexDirection: 'row',
     padding: 10,
     marginTop: '15%',
+    height: 150,
   },
   imageFrame: {
     width: '20%',
@@ -43,20 +49,25 @@ const rangkingPageStyles = StyleSheet.create({
     top: '-15%',
   },
   image: {
-    width: '100%',
-    height: undefined,
-    aspectRatio: 1,
+    // 
+    width: 100,
+    marginLeft: 10,
+    height: 170,
+    //backgroundColor: 'white',
+    top: '-15%',
+    //resizeMode: 'stretch',
+    borderRadius: 10,
   },
   title: {
     fontSize: 18,
     fontFamily: 'Ubuntu-Medium',
-    marginTop: 10,
-    marginLeft: 20,
+    // marginTop: 10,
+    // marginLeft: 20,
     color: 'white',
   },
   textArea: {
     width: '60%',
-    marginLeft: 20,
+    marginLeft: 10,
   },
   rating: {
     flexDirection: 'row',
@@ -84,8 +95,8 @@ const rangkingPageStyles = StyleSheet.create({
     color: 'white',
   },
   peringkat: {
-    width: '20%',
-    top: '-5%',
+    //width: '20%',
+    top: '-10%',
     alignItems: 'center',
   },
   IconTrophy: {
@@ -95,7 +106,7 @@ const rangkingPageStyles = StyleSheet.create({
   peringkatText: {
     fontSize: 20,
     color: 'white',
-    top: '-40%',
+    top: '-30%',
     fontFamily: 'Ubuntu-Bold',
   },
 });

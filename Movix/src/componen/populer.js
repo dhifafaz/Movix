@@ -12,35 +12,39 @@ import {
 } from 'react-native';
 import { ImageListTemporary } from "../data/imageFilm";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchApiListFilm } from "../redux/action";
 
 
 const Populer = () => {
 
-    const [gendrePic, setGenrePic] = useState('All')
+    const dispatch = useDispatch()
 
-    const chengeGendre = (item) => {
-        setGenrePic(item)
-    }
+    const { dataListFilm, linkFoto } = useSelector(state => state.userReducer);
+
+    useEffect(() => {
+        dispatch(fetchApiListFilm())
+
+    }, []);
 
     return (
         <View>
             <FlatList
                 horizontal={true}
-                data={ImageListTemporary}
+                data={dataListFilm}
                 renderItem={({ item, index, separators }) => {
                     //filteredDataSource
                     return (
-                        <Pressable>
+                        <Pressable style={{ width: 120, marginRight: 10 }}>
                             <Image
-                                source={item.gendre}
-                                style={{ height: 150, width: 100, borderRadius: 10, marginRight: 10 }}
+                                source={{ uri: linkFoto + item.image }}
+                                style={{ height: 200, width: 120, borderRadius: 10 }}
                             />
                             <View style={styles.view10} />
-                            <Text style={styles.text}>{item.judul}</Text>
+                            <Text style={styles.text} ellipsizeMode="tail" numberOfLines={1}>{item.title}</Text>
                             <View style={styles.row}>
                                 <MaterialCommunityIcons name="star" color={'#F8B911'} size={15} />
-                                <Text style={styles.textReting}>{item.bintang}</Text>
+                                <Text style={styles.textReting}>{item.rating}</Text>
                             </View>
                         </Pressable>
                     )

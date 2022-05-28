@@ -13,41 +13,50 @@ import {
 } from 'react-native';
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { ImageListTemporary } from "../data/imageFilm";
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchApiRanking } from "../redux/action";
 
 const TopThreeFilm = () => {
 
     const windowWidth = Dimensions.get("window").width;
     const windowHeight = Dimensions.get("window").height;
 
+    const dispatch = useDispatch()
+
+    const { dataRankingFilm, linkFoto } = useSelector(state => state.userReducer);
+
+    useEffect(() => {
+        dispatch(fetchApiRanking())
+
+    }, []);
+
+    const topThree = () => {
+        let temporaryData = []
+
+        if (dataRankingFilm != null) {
+            for (let i = 0; i < 3; i++) {
+                temporaryData.push(dataRankingFilm[i])
+            }
+        }
+        console.log('Masuk')
+        console.log(temporaryData)
+        return temporaryData
+    }
+
 
     return (
         <View>
-            {/* <FlatList
-                horizontal={true}
-                data={gendreList}
-                renderItem={({ item, index, separators }) => {
-                    //filteredDataSource
-                    return (
-                        <View>
-                            <Pressable>
-                                
-                            </Pressable>
-                        </View>
-                    )
-                }}
-                keyExtractor={(item) => item.gendre}
 
-            /> */}
             <Carousel
 
-                data={ImageListTemporary}
+                data={topThree()}
                 renderItem={({ item, index, separators }) => {
-                    //filteredDataSource
+                    //console.log
                     return (
                         <View>
                             <Pressable>
                                 <Image
-                                    source={item.gendre}
+                                    source={{ uri: linkFoto + item.image }}
                                     style={{ height: 200, width: 300, borderRadius: 10 }}
                                 />
                             </Pressable>
