@@ -2,6 +2,7 @@ import axios from "axios"
 
 export const GET_RANKING_FILM = 'GET_RANKING_FILM'
 export const GET_LIST_FILM = 'GET_LIST_FILM'
+export const CHENGE_GENDRE_FILM = 'CHENGE_GENDRE_FILM'
 
 export const fetchApiRanking = () => {
     try {
@@ -38,3 +39,8 @@ export const fetchApiListFilm = () => {
         console.log(error);
     }
 }
+
+export const setGendreFilm = (data) => ({
+    type: CHENGE_GENDRE_FILM,
+    data: data,
+})

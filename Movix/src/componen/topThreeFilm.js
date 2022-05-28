@@ -30,18 +30,18 @@ const TopThreeFilm = () => {
 
     }, []);
 
-    const topThree = () => {
-        let temporaryData = []
+    // const topThree = () => {
+    //     let temporaryData = []
 
-        if (dataRankingFilm != null) {
-            for (let i = 0; i < 3; i++) {
-                temporaryData.push(dataRankingFilm[i])
-            }
-        }
-        console.log('Masuk')
-        console.log(temporaryData)
-        return temporaryData
-    }
+    //     if (dataRankingFilm != null) {
+    //         for (let i = 0; i < 3; i++) {
+    //             temporaryData.push(dataRankingFilm[i])
+    //         }
+    //     }
+    //     console.log('Masuk')
+    //     console.log(temporaryData)
+    //     return temporaryData
+    // }
 
 
     return (
@@ -49,7 +49,7 @@ const TopThreeFilm = () => {
 
             <Carousel
 
-                data={topThree()}
+                data={dataRankingFilm}
                 renderItem={({ item, index, separators }) => {
                     //console.log
                     return (

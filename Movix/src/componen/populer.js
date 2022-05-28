@@ -20,7 +20,7 @@ const Populer = () => {
 
     const dispatch = useDispatch()
 
-    const { dataListFilm, linkFoto } = useSelector(state => state.userReducer);
+    const { dataListFilm, linkFoto, gendreSelect } = useSelector(state => state.userReducer);
 
     useEffect(() => {
         dispatch(fetchApiListFilm())
@@ -33,21 +33,40 @@ const Populer = () => {
                 horizontal={true}
                 data={dataListFilm}
                 renderItem={({ item, index, separators }) => {
-                    //filteredDataSource
-                    return (
-                        <Pressable style={{ width: 120, marginRight: 10 }}>
-                            <Image
-                                source={{ uri: linkFoto + item.image }}
-                                style={{ height: 200, width: 120, borderRadius: 10 }}
-                            />
-                            <View style={styles.view10} />
-                            <Text style={styles.text} ellipsizeMode="tail" numberOfLines={1}>{item.title}</Text>
-                            <View style={styles.row}>
-                                <MaterialCommunityIcons name="star" color={'#F8B911'} size={15} />
-                                <Text style={styles.textReting}>{item.rating}</Text>
-                            </View>
-                        </Pressable>
-                    )
+                    if (gendreSelect == 'All') {
+                        return (
+                            <Pressable style={{ width: 120, marginRight: 10 }}>
+                                <Image
+                                    source={{ uri: linkFoto + item.image }}
+                                    style={{ height: 200, width: 120, borderRadius: 10 }}
+                                />
+                                <View style={styles.view10} />
+                                <Text style={styles.text} ellipsizeMode="tail" numberOfLines={1}>{item.title}</Text>
+                                <View style={styles.row}>
+                                    <MaterialCommunityIcons name="star" color={'#F8B911'} size={15} />
+                                    <Text style={styles.textReting}>{item.rating}</Text>
+                                </View>
+                            </Pressable>
+                        )
+                    } else {
+                        if (gendreSelect == item.genre) {
+                            return (
+                                <Pressable style={{ width: 120, marginRight: 10 }}>
+                                    <Image
+                                        source={{ uri: linkFoto + item.image }}
+                                        style={{ height: 200, width: 120, borderRadius: 10 }}
+                                    />
+                                    <View style={styles.view10} />
+                                    <Text style={styles.text} ellipsizeMode="tail" numberOfLines={1}>{item.title}</Text>
+                                    <View style={styles.row}>
+                                        <MaterialCommunityIcons name="star" color={'#F8B911'} size={15} />
+                                        <Text style={styles.textReting}>{item.rating}</Text>
+                                    </View>
+                                </Pressable>
+                            )
+                        }
+                    }
+
                 }}
                 keyExtractor={(item) => item.gendre}
 

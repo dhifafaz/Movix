@@ -11,15 +11,19 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { gendreList } from "../data/dataGendre";
-
+import { useSelector, useDispatch } from 'react-redux';
+import { setGendreFilm } from "../redux/action";
 
 
 
 const Gendre = () => {
+    const dispatch = useDispatch()
 
     const [gendrePic, setGenrePic] = useState('All')
 
     const chengeGendre = (item) => {
+        dispatch(setGendreFilm(item))
+        console.log(item)
         setGenrePic(item)
     }
 
