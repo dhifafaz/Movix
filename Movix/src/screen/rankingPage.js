@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -12,70 +12,78 @@ import {
   Pressable,
 } from 'react-native';
 
-import rangkingPageStyles from '../styles/rangkingPageStyles';
+import rankingPageStyles from '../style/rankingStyle';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchApiRanking } from "../redux/action";
+import {useSelector, useDispatch} from 'react-redux';
+import {fetchApiRanking} from '../redux/action';
 
-const RankingPage = () => {
+const RankingPage = ({navigation}) => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  const { dataRankingFilm, linkFoto } = useSelector(state => state.userReducer);
+  const {dataRankingFilm, linkFoto} = useSelector(state => state.userReducer);
 
   useEffect(() => {
-    dispatch(fetchApiRanking())
-
+    dispatch(fetchApiRanking());
   }, []);
 
-
   return (
-    <SafeAreaView style={rangkingPageStyles.container}>
-      <ScrollView >
-
-        <View style={rangkingPageStyles.margin}>
-          <Text
-            style={[rangkingPageStyles.color, rangkingPageStyles.headerText]}>
+    <SafeAreaView style={rankingPageStyles.container}>
+      <ScrollView>
+        <View style={rankingPageStyles.margin}>
+          <Text style={[rankingPageStyles.color, rankingPageStyles.headerText]}>
             Popular
           </Text>
           <FlatList
             data={dataRankingFilm}
-            renderItem={({ item, index, separators }) => {
+            renderItem={({item, index, separators}) => {
               //filteredDataSource
               return (
-                <Pressable >
-                  <View style={rangkingPageStyles.box}>
-
+                <Pressable
+                  onPress={() => {
+                    navigation.navigate('DetailPage');
+                  }}>
+                  <View style={rankingPageStyles.box}>
                     <Image
-                      source={{ uri: linkFoto + item.image }}
+                      source={{uri: linkFoto + item.image}}
+                      style={rankingPageStyles.image}></Image>
 
-                      style={rangkingPageStyles.image}></Image>
-
-                    <View style={rangkingPageStyles.textArea}>
-                      <Text style={rangkingPageStyles.title} ellipsizeMode='tail' numberOfLines={2}>
+                    <View style={rankingPageStyles.textArea}>
+                      <Text
+                        style={rankingPageStyles.title}
+                        ellipsizeMode="tail"
+                        numberOfLines={2}>
                         {item.title}
                       </Text>
-                      <View style={rangkingPageStyles.rating}>
-                        <Ionicons name="star" style={rangkingPageStyles.Icon} />
-                        <Text style={rangkingPageStyles.ratingText}>{item.rating}</Text>
+                      <View style={rankingPageStyles.rating}>
+                        <Ionicons name="star" style={rankingPageStyles.Icon} />
+                        <Text style={rankingPageStyles.ratingText}>
+                          {item.rating}
+                        </Text>
                       </View>
-                      <Text style={rangkingPageStyles.genre}>Genre : {item.genre}</Text>
-                      <Text style={rangkingPageStyles.durasi}>
+                      <Text style={rankingPageStyles.genre}>
+                        Genre : {item.genre}
+                      </Text>
+                      <Text style={rankingPageStyles.durasi}>
                         Durasi : {item.durasi}
                       </Text>
                     </View>
-                    <View style={rangkingPageStyles.peringkat}>
-                      <Feather name="award" style={rangkingPageStyles.IconTrophy} />
-                      <Text style={rangkingPageStyles.peringkatText}>{index + 1}</Text>
+                    <View style={rankingPageStyles.peringkat}>
+                      <Feather
+                        name="award"
+                        style={rankingPageStyles.IconTrophy}
+                      />
+                      <Text style={rankingPageStyles.peringkatText}>
+                        {index + 1}
+                      </Text>
                     </View>
                   </View>
                 </Pressable>
-              )
+              );
             }}
-            keyExtractor={(item) => item.gendre}
+            keyExtractor={item => item.gendre}
           />
-          <View style={{ height: 80 }} />
+          <View style={{height: 80}} />
         </View>
       </ScrollView>
     </SafeAreaView>
