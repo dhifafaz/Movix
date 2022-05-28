@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
     SafeAreaView,
     ScrollView,
@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import styles from "../style/profilSyle";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 
 const ProfilPage = () => {
