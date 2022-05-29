@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const detailPageStyles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ const detailPageStyles = StyleSheet.create({
   },
   header: {
     width: '100%',
-    height: '50%',
+    //height: '50%',
     flexDirection: 'row',
     marginTop: '10%',
   },
@@ -30,7 +30,7 @@ const detailPageStyles = StyleSheet.create({
   imageFrame: {
     backgroundColor: 'white',
     width: '95%',
-    height: '100%',
+    height: 450,
     borderRadius: 20,
   },
   movDetail: {
@@ -45,9 +45,10 @@ const detailPageStyles = StyleSheet.create({
     color: 'white',
   },
   sutradara: {
-    marginTop: '1%',
-    fontSize: 10,
+    //marginTop: '1%',
+    fontSize: 12,
     fontFamily: 'Ubuntu',
+    color: '#ffff'
   },
   kategoriFrame: {
     marginTop: '3%',
@@ -64,6 +65,12 @@ const detailPageStyles = StyleSheet.create({
     color: 'white',
     marginLeft: '10%',
   },
+  kategori1: {
+    fontSize: 15,
+    fontFamily: 'Ubuntu',
+    color: 'white',
+    //marginLeft: '10%',
+  },
   sinopsisArea: {
     width: '93%',
   },
@@ -77,14 +84,14 @@ const detailPageStyles = StyleSheet.create({
   frame: {
     flexDirection: 'row',
     marginTop: '3%',
-    width: '110%',
-    height: '10%',
+    width: 100,
+    height: 40,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#4A6495',
     padding: 5,
     borderRadius: 10,
-    transform: [{rotate: '-90deg'}],
+    transform: [{ rotate: '-90deg' }],
     marginBottom: '80%',
     top: '70%',
   },

@@ -15,8 +15,11 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import { ImageListTemporary } from "../data/imageFilm";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchApiRanking } from "../redux/action";
+import { useNavigation } from '@react-navigation/native';
 
 const TopThreeFilm = () => {
+
+    const navigation = useNavigation();
 
     const windowWidth = Dimensions.get("window").width;
     const windowHeight = Dimensions.get("window").height;
@@ -54,7 +57,20 @@ const TopThreeFilm = () => {
                     //console.log
                     return (
                         <View>
-                            <Pressable>
+                            <Pressable
+                                onPress={() => {
+                                    navigation.navigate('DetailPage', {
+                                        title: item.title,
+                                        rating: item.rating,
+                                        tahun_terbit: item.tahun_terbit,
+                                        genre: item.genre,
+                                        durasi: item.durasi,
+                                        description: item.description,
+                                        sutradara: item.sutradara,
+                                        image: linkFoto + item.image,
+                                    })
+                                }}
+                            >
                                 <Image
                                     source={{ uri: linkFoto + item.image }}
                                     style={{ height: 200, width: 300, borderRadius: 10 }}

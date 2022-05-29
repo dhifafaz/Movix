@@ -14,11 +14,12 @@ import { ImageListTemporary } from "../data/imageFilm";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchApiListFilm } from "../redux/action";
-
+import { useNavigation } from '@react-navigation/native';
 
 const Populer = () => {
 
     const dispatch = useDispatch()
+    const navigation = useNavigation()
 
     const { dataListFilm, linkFoto, gendreSelect } = useSelector(state => state.userReducer);
 
@@ -35,7 +36,22 @@ const Populer = () => {
                 renderItem={({ item, index, separators }) => {
                     if (gendreSelect == 'All') {
                         return (
-                            <Pressable style={{ width: 120, marginRight: 10 }}>
+                            <Pressable
+                                style={{ width: 120, marginRight: 10 }}
+                                onPress={() => {
+                                    navigation.navigate('DetailPage', {
+                                        title: item.title,
+                                        rating: item.rating,
+                                        tahun_terbit: item.tahun_terbit,
+                                        genre: item.genre,
+                                        durasi: item.durasi,
+                                        description: item.description,
+                                        sutradara: item.sutradara,
+                                        image: linkFoto + item.image,
+                                    })
+                                }}
+
+                            >
                                 <Image
                                     source={{ uri: linkFoto + item.image }}
                                     style={{ height: 200, width: 120, borderRadius: 10 }}
@@ -51,7 +67,22 @@ const Populer = () => {
                     } else {
                         if (gendreSelect == item.genre) {
                             return (
-                                <Pressable style={{ width: 120, marginRight: 10 }}>
+                                <Pressable
+                                    style={{ width: 120, marginRight: 10 }}
+                                    onPress={() => {
+                                        navigation.navigate('DetailPage', {
+                                            title: item.title,
+                                            rating: item.rating,
+                                            tahun_terbit: item.tahun_terbit,
+                                            genre: item.genre,
+                                            durasi: item.durasi,
+                                            description: item.description,
+                                            sutradara: item.sutradara,
+                                            image: linkFoto + item.image,
+                                        })
+                                    }}
+
+                                >
                                     <Image
                                         source={{ uri: linkFoto + item.image }}
                                         style={{ height: 200, width: 120, borderRadius: 10 }}

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import MainContainer from './src/navigation';
 import DetailPage from './src/screen/detailPage';
 
-import {Provider} from 'react-redux';
-import {Store} from './src/redux/store';
+import { Provider } from 'react-redux';
+import { Store } from './src/redux/store';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Home"
-          screenOptions={{headerShown: false}}>
+          screenOptions={{ headerShown: false }}>
           <Stack.Screen name="MainContainer" component={MainContainer} />
           <Stack.Screen name="DetailPage" component={DetailPage} />
         </Stack.Navigator>
