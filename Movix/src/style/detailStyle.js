@@ -62,6 +62,7 @@ const detailPageStyles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Ubuntu',
     color: 'white',
+    marginLeft: '10%',
   },
   sinopsisArea: {
     width: '93%',
@@ -72,6 +73,44 @@ const detailPageStyles = StyleSheet.create({
     fontFamily: 'Ubuntu',
     color: 'white',
     textAlign: 'justify',
+  },
+  frame: {
+    flexDirection: 'row',
+    marginTop: '3%',
+    width: '110%',
+    height: '10%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#4A6495',
+    padding: 5,
+    borderRadius: 10,
+    transform: [{rotate: '-90deg'}],
+    marginBottom: '80%',
+    top: '70%',
+  },
+  clockIcon: {
+    fontSize: 20,
+    color: 'white',
+  },
+  calendarIcon: {
+    fontSize: 20,
+    color: 'white',
+  },
+  starIcon: {
+    fontSize: 20,
+    color: '#F8B911',
+  },
+  play: {
+    width: '90%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  playButton: {
+    top: '-25%',
+  },
+  playIcon: {
+    fontSize: 70,
+    color: '#0054FE',
   },
 });
 

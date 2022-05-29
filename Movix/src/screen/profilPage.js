@@ -11,16 +11,12 @@ import {
 } from 'react-native';
 import styles from '../style/profilSyle';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const ProfilPage = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <MaterialCommunityIcons
-          name="chevron-left-circle-outline"
-          size={40}
-          style={{marginLeft: 20, marginTop: 20, color: 'white'}}
-        />
+      <View style={styles.header}>
         <Image
           style={styles.picture}
           source={require('../image/IMG_9926.png')}
