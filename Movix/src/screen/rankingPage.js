@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -15,13 +15,13 @@ import {
 import rankingPageStyles from '../style/rankingStyle';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchApiRanking } from '../redux/action';
+import {useSelector, useDispatch} from 'react-redux';
+import {fetchApiRanking} from '../redux/action';
 
-const RankingPage = ({ navigation }) => {
+const RankingPage = ({navigation}) => {
   const dispatch = useDispatch();
 
-  const { dataRankingFilm, linkFoto } = useSelector(state => state.userReducer);
+  const {dataRankingFilm, linkFoto} = useSelector(state => state.userReducer);
 
   useEffect(() => {
     dispatch(fetchApiRanking());
@@ -36,7 +36,7 @@ const RankingPage = ({ navigation }) => {
           </Text>
           <FlatList
             data={dataRankingFilm}
-            renderItem={({ item, index, separators }) => {
+            renderItem={({item, index, separators}) => {
               //filteredDataSource
               return (
                 <Pressable
@@ -50,11 +50,11 @@ const RankingPage = ({ navigation }) => {
                       description: item.description,
                       sutradara: item.sutradara,
                       image: linkFoto + item.image,
-                    })
+                    });
                   }}>
                   <View style={rankingPageStyles.box}>
                     <Image
-                      source={{ uri: linkFoto + item.image }}
+                      source={{uri: linkFoto + item.image}}
                       style={rankingPageStyles.image}></Image>
 
                     <View style={rankingPageStyles.textArea}>
@@ -86,13 +86,14 @@ const RankingPage = ({ navigation }) => {
                         {index + 1}
                       </Text>
                     </View>
+                    <View style={rankingPageStyles.borderView}></View>
                   </View>
                 </Pressable>
               );
             }}
             keyExtractor={item => item.gendre}
           />
-          <View style={{ height: 80 }} />
+          <View style={{height: 80}} />
         </View>
       </ScrollView>
     </SafeAreaView>

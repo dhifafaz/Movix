@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const rankingPageStyles = StyleSheet.create({
   container: {
@@ -66,7 +66,7 @@ const rankingPageStyles = StyleSheet.create({
     color: 'white',
   },
   textArea: {
-    width: '60%',
+    width: '50%',
     marginLeft: 10,
   },
   rating: {
@@ -95,11 +95,14 @@ const rankingPageStyles = StyleSheet.create({
     color: 'white',
   },
   peringkat: {
-    //width: '20%',
+    width: '10%',
     top: '-9%',
     alignItems: 'center',
 
     //justifyContent: 'center'
+  },
+  borderView: {
+    width: '20%',
   },
   IconTrophy: {
     fontSize: 32,
