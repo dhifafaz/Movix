@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const rankingPageStyles = StyleSheet.create({
   container: {
@@ -29,7 +29,7 @@ const rankingPageStyles = StyleSheet.create({
   },
   body: {
     width: '100%',
-    height: '90%',
+    //height: '90%',
   },
   box: {
     //marginLeft: '3%',
@@ -44,7 +44,7 @@ const rankingPageStyles = StyleSheet.create({
   imageFrame: {
     width: '20%',
     marginLeft: 10,
-    height: '150%',
+    height: '10%',
     backgroundColor: 'white',
     top: '-15%',
   },
@@ -96,17 +96,19 @@ const rankingPageStyles = StyleSheet.create({
   },
   peringkat: {
     //width: '20%',
-    top: '-10%',
+    top: '-9%',
     alignItems: 'center',
+
+    //justifyContent: 'center'
   },
   IconTrophy: {
-    fontSize: 40,
+    fontSize: 32,
     color: '#F8B911',
   },
   peringkatText: {
-    fontSize: 20,
+    fontSize: 12,
     color: 'white',
-    top: '-30%',
+    top: '-22%',
     fontFamily: 'Ubuntu-Bold',
   },
 });

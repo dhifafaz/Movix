@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -52,13 +52,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   thirdTab: {
-    width: 345,
+    width: 300,
     height: 50,
     backgroundColor: '#4A6495',
     alignSelf: 'center',
     marginTop: '3%',
     borderRadius: 10,
     flexDirection: 'row',
+    //justifyContent: 'center',
+    alignContent: 'center'
   },
   logout: {
     width: 345,
